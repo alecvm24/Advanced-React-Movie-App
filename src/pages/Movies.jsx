@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MovieList from "./src/components/MovieList";
-import FilterOptions from "./src/components/FilterOptions";
+import MovieList from "../components/MovieList";
+import FilterOptions from "../components/FilterOptions";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -16,7 +16,7 @@ const Movies = () => {
       .catch((error) => {
         console.error("Error fetching movies:", error);
       });
-  });
+  }, []);
 
   const filteredMovies = filter
     ? movies.filter((movie) =>
